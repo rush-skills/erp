@@ -50,7 +50,7 @@ gem 'omniauth-facebook'
 gem 'google-analytics-rails'
 gem 'validates_formatting_of'
 gem 'tzinfo-data'
-
+gem 'thin'
 group :development do
   gem 'pry-rails'
   gem 'better_errors'
