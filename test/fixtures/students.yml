@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  course_id: 
+  batch_id: 
+  name: MyString
+  roll_no: MyString
+  gender: 1
+  school: MyString
+  phone_1: MyString
+  phone_2: MyString
+  date_of_birth: 2015-04-02
+
+two:
+  course_id: 
+  batch_id: 
+  name: MyString
+  roll_no: MyString
+  gender: 1
+  school: MyString
+  phone_1: MyString
+  phone_2: MyString
+  date_of_birth: 2015-04-02

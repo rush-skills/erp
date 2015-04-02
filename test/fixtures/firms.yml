@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  financial_year: MyString
+  academic_year: MyString
+  service_tax_applicable: false
+  service_tax_rate: 9.99
+  service_tax_number: MyString
+
+two:
+  name: MyString
+  financial_year: MyString
+  academic_year: MyString
+  service_tax_applicable: false
+  service_tax_rate: 9.99
+  service_tax_number: MyString

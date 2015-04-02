@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  course_student_id: 
+  due_on: 2015-04-02
+  amount: 1
+  title: MyString
+
+two:
+  course_student_id: 
+  due_on: 2015-04-02
+  amount: 1
+  title: MyString

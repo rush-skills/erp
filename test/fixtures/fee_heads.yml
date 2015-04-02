@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fee_id: 
+  name: MyString
+  amount: 1
+  discountable: false
+
+two:
+  fee_id: 
+  name: MyString
+  amount: 1
+  discountable: false

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  course_id: 
+  student_id: 
+  batch_id: 
+  discount: 1
+  total: 1
+
+two:
+  course_id: 
+  student_id: 
+  batch_id: 
+  discount: 1
+  total: 1
