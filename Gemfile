@@ -51,6 +51,7 @@ gem 'google-analytics-rails'
 gem 'validates_formatting_of'
 gem 'tzinfo-data'
 gem 'thin'
+gem 'rails_admin'
 group :development do
   gem 'pry-rails'
   gem 'better_errors'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150402143221) do
+ActiveRecord::Schema.define(version: 20150402152054) do
 
   create_table "additional_fee_payments", force: true do |t|
     t.integer  "student_id"
@@ -73,7 +73,10 @@ ActiveRecord::Schema.define(version: 20150402143221) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "firm_id"
   end
+
+  add_index "courses", ["firm_id"], name: "index_courses_on_firm_id"
 
   create_table "courses_subjects", force: true do |t|
     t.integer "course_id"
