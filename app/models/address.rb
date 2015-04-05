@@ -16,4 +16,7 @@
 class Address < ActiveRecord::Base
   belongs_to :firm
   belongs_to :student
+  validates_presence_of :line_1, on: :create, message: "can't be blank"
+  validates_presence_of :city, on: :create, message: "can't be blank"
+  validates_presence_of :country, on: :create, message: "can't be blank"
 end

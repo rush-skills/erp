@@ -14,4 +14,8 @@
 class Installment < ActiveRecord::Base
   belongs_to :course_student
   has_one :payment
+  validates_presence_of :course_student, on: :create, message: "can't be blank"
+  validates_presence_of :due_on, on: :create, message: "can't be blank"
+  validates_presence_of :amount, on: :create, message: "can't be blank"
+  validates_presence_of :title, on: :create, message: "can't be blank"
 end

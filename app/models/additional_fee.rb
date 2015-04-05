@@ -11,4 +11,6 @@
 
 class AdditionalFee < ActiveRecord::Base
   has_many :additional_fee_payments
+  validates_presence_of :name, on: :create, message: "can't be blank"
+  validates_presence_of :amount, on: :create, message: "can't be blank"
 end

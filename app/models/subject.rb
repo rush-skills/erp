@@ -12,4 +12,6 @@
 class Subject < ActiveRecord::Base
   belongs_to :standard
   has_and_belongs_to_many :courses
+  validates_presence_of :name, on: :create, message: "can't be blank"
+  validates_presence_of :standard, on: :create, message: "can't be blank"
 end

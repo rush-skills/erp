@@ -16,4 +16,6 @@
 class Firm < ActiveRecord::Base
   has_one :address
   has_many :courses
+  validates_presence_of :name, on: :create, message: "can't be blank"
+  validates_presence_of :service_tax_applicable, on: :create, message: "can't be blank"
 end

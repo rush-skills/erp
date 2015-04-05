@@ -10,4 +10,5 @@
 
 class Standard < ActiveRecord::Base
   has_many :subjects
+  validates_presence_of :name, on: :create, message: "can't be blank"
 end

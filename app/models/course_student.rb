@@ -18,4 +18,7 @@ class CourseStudent < ActiveRecord::Base
   belongs_to :batch
   has_many :payments
   has_many :installments
+  validates_presence_of :course, on: :create, message: "can't be blank"
+  validates_presence_of :student, on: :create, message: "can't be blank"
+  validates_presence_of :batch, on: :create, message: "can't be blank"
 end
