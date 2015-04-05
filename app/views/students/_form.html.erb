@@ -1,11 +1,22 @@
 <%= simple_form_for @student do |f| %>
-  <%= f.input :name %>
-  <%= f.input :roll_no %>
-  <%= f.input :gender %>
-  <%= f.input :school %>
-  <%= f.input :phone_1 %>
-  <%= f.input :phone_2 %>
-  <%= f.input :date_of_birth ,as: :date_picker, :label => 'Date Of Birth',
-                input_html: {data: {date_options: {defaultDate: '01/01/1997'}}}  %>
-  <%= f.button :submit %>
+  <div class="row">
+    <%= errors_for @student %>
+    <div class="col-md-6">
+    <%= f.input :name %>
+    <%= f.input :roll_no %>
+    <%= f.input :gender , :as => :radio_buttons%>
+    <%= f.input :school %>
+    <%= f.input :phone_1 %>
+    <%= f.input :phone_2 %>
+    </div>
+    <div class="col-md-6">
+    <%= f.input :date_of_birth ,as: :date_picker, :label => 'Date Of Birth',
+                  input_html: {data: {date_options: {defaultDate: '01/01/1997'}}}  %>
+    <%= f.label :address %>
+    <%= f.simple_fields_for :address do |ff| %>
+     <%= render 'addresses/address_field', f: ff %>
+    <% end %>
+    <%= f.button :submit %>
+    </div>
+  </div>
 <% end %>

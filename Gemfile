@@ -58,3 +58,6 @@ group :development do
 end
 gem 'momentjs-rails', '~> 2.9',  :github => 'derekprior/momentjs-rails'
 gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
+gem "cocoon"
+gem 'country_select'
+gem 'enumerize'

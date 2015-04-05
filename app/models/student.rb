@@ -17,11 +17,12 @@
 #
 
 class Student < ActiveRecord::Base
+  extend Enumerize
   has_many :additional_fee_payments
   has_many :course_students
   has_one :address
   validates_presence_of :name, on: :create, message: "can't be blank"
-  validates_presence_of :address, on: :create, message: "can't be blank"
   accepts_nested_attributes_for :address, reject_if: ->(attributes){ attributes['name'].blank? },allow_destroy: true
   validates_associated :address, on: :create
+  enumerize :gender, in: {:male => 1, :female => 2}, default: :male
 end
