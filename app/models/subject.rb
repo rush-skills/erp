@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: subjects
+#
+#  id          :integer          not null, primary key
+#  standard_id :integer
+#  name        :string(255)
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
 class Subject < ActiveRecord::Base
   belongs_to :standard
   has_and_belongs_to_many :courses
