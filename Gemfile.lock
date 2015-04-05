@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/derekprior/momentjs-rails.git
+  revision: 4b1b0a64bca3eb5ab8741eb4a4d2c1c5a6fdf04b
+  specs:
+    momentjs-rails (2.9.0)
+      railties (>= 3.1)
+
+GIT
   remote: git://github.com/plataformatec/devise.git
   revision: 2f0002a449a8b9616d51127dc6247bfd8414523d
   specs:
@@ -17,6 +24,15 @@ GIT
     bootstrap-sass (3.3.4.1)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
+
+GIT
+  remote: git://github.com/zpaulovics/datetimepicker-rails.git
+  revision: c5405f3486b57a52416caf93b79fc09d56930a82
+  branch: master
+  submodules: true
+  specs:
+    datetimepicker-rails (4.7.15)
+      momentjs-rails (>= 2.9.0)
 
 GEM
   remote: https://rubygems.org/
@@ -497,10 +513,12 @@ DEPENDENCIES
   bootstrap-sass-extras
   bundler
   coffee-rails (~> 4.0.0)
+  datetimepicker-rails!
   devise!
   google-analytics-rails
   jbuilder (~> 2.0)
   jquery-rails
+  momentjs-rails (~> 2.9)!
   omniauth
   omniauth-facebook
   pry-rails

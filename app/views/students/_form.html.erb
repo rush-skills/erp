@@ -1,12 +1,11 @@
 <%= simple_form_for @student do |f| %>
-  <%= f.association :course %>
-  <%= f.association :batch %>
   <%= f.input :name %>
   <%= f.input :roll_no %>
   <%= f.input :gender %>
   <%= f.input :school %>
   <%= f.input :phone_1 %>
   <%= f.input :phone_2 %>
-  <%= f.input :date_of_birth %>
+  <%= f.input :date_of_birth ,as: :date_picker, :label => 'Date Of Birth',
+                input_html: {data: {date_options: {defaultDate: '01/01/1997'}}}  %>
   <%= f.button :submit %>
 <% end %>

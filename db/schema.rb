@@ -146,8 +146,6 @@ ActiveRecord::Schema.define(version: 20150402152054) do
   end
 
   create_table "students", force: true do |t|
-    t.integer  "course_id"
-    t.integer  "batch_id"
     t.string   "name"
     t.string   "roll_no"
     t.integer  "gender"
@@ -158,9 +156,6 @@ ActiveRecord::Schema.define(version: 20150402152054) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "students", ["batch_id"], name: "index_students_on_batch_id"
-  add_index "students", ["course_id"], name: "index_students_on_course_id"
 
   create_table "subjects", force: true do |t|
     t.integer  "standard_id"

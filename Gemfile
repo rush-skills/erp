@@ -56,3 +56,5 @@ group :development do
   gem 'pry-rails'
   gem 'better_errors'
 end
+gem 'momentjs-rails', '~> 2.9',  :github => 'derekprior/momentjs-rails'
+gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true

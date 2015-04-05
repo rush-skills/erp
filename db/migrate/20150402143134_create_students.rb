@@ -1,8 +1,6 @@
 class CreateStudents < ActiveRecord::Migration
   def change
     create_table :students do |t|
-      t.references :course, index: true
-      t.references :batch, index: true
       t.string :name
       t.string :roll_no
       t.integer :gender
