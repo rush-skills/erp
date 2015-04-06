@@ -9,6 +9,10 @@
 #  service_tax_applicable :boolean
 #  service_tax_rate       :decimal(, )
 #  service_tax_number     :string(255)
+#  line_1                 :string(255)
+#  line_2                 :string(255)
+#  city                   :string(255)
+#  country                :string(255)
 #  created_at             :datetime
 #  updated_at             :datetime
 #

@@ -8,6 +8,7 @@
 #  batch_id   :integer
 #  discount   :integer
 #  total      :integer
+#  firm_id    :integer
 #  created_at :datetime
 #  updated_at :datetime
 #
