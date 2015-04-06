@@ -8,7 +8,10 @@ class CreateStudents < ActiveRecord::Migration
       t.string :phone_1
       t.string :phone_2
       t.date :date_of_birth
-
+      t.string :line_1
+      t.string :line_2
+      t.string :city
+      t.string :country
       t.timestamps
     end
   end

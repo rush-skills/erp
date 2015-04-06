@@ -32,20 +32,6 @@ ActiveRecord::Schema.define(version: 20150402152054) do
     t.datetime "updated_at"
   end
 
-  create_table "addresses", force: true do |t|
-    t.string   "line_1"
-    t.string   "line_2"
-    t.string   "city"
-    t.string   "country"
-    t.integer  "firm_id"
-    t.integer  "student_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "addresses", ["firm_id"], name: "index_addresses_on_firm_id"
-  add_index "addresses", ["student_id"], name: "index_addresses_on_student_id"
-
   create_table "batches", force: true do |t|
     t.integer  "course_id"
     t.string   "name"
@@ -61,12 +47,14 @@ ActiveRecord::Schema.define(version: 20150402152054) do
     t.integer  "batch_id"
     t.integer  "discount"
     t.integer  "total"
+    t.integer  "firm_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "course_students", ["batch_id"], name: "index_course_students_on_batch_id"
   add_index "course_students", ["course_id"], name: "index_course_students_on_course_id"
+  add_index "course_students", ["firm_id"], name: "index_course_students_on_firm_id"
   add_index "course_students", ["student_id"], name: "index_course_students_on_student_id"
 
   create_table "courses", force: true do |t|
@@ -112,6 +100,10 @@ ActiveRecord::Schema.define(version: 20150402152054) do
     t.boolean  "service_tax_applicable"
     t.decimal  "service_tax_rate"
     t.string   "service_tax_number"
+    t.string   "line_1"
+    t.string   "line_2"
+    t.string   "city"
+    t.string   "country"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -153,6 +145,10 @@ ActiveRecord::Schema.define(version: 20150402152054) do
     t.string   "phone_1"
     t.string   "phone_2"
     t.date     "date_of_birth"
+    t.string   "line_1"
+    t.string   "line_2"
+    t.string   "city"
+    t.string   "country"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -7,7 +7,10 @@ class CreateFirms < ActiveRecord::Migration
       t.boolean :service_tax_applicable
       t.decimal :service_tax_rate
       t.string :service_tax_number
-
+      t.string :line_1
+      t.string :line_2
+      t.string :city
+      t.string :country
       t.timestamps
     end
   end

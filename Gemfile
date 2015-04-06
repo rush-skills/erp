@@ -61,3 +61,4 @@ gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: '
 gem "cocoon"
 gem 'country_select'
 gem 'enumerize'
+gem 'quiet_assets', group: :development

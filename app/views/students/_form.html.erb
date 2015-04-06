@@ -13,9 +13,10 @@
     <%= f.input :date_of_birth ,as: :date_picker, :label => 'Date Of Birth',
                   input_html: {data: {date_options: {defaultDate: '01/01/1997'}}}  %>
     <%= f.label :address %>
-    <%= f.simple_fields_for :address do |ff| %>
-     <%= render 'addresses/address_field', f: ff %>
-    <% end %>
+    <%= f.input :line_1 %>
+    <%= f.input :line_2 %>
+    <%= f.input :city %>
+    <%= f.input :country, as: :country, priority: ["India"] %>
     <%= f.button :submit %>
     </div>
   </div>

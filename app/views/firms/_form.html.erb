@@ -44,3 +44,25 @@
     </div>
   </div>
 <% end %>
+<%= simple_form_for @firm do |f| %>
+  <div class="row">
+    <%= errors_for @firm %>
+    <div class="col-md-6">
+    <%= f.input :name %>
+    <%= f.input :financial_year %>
+    <%= f.input :academic_year %>
+    <%= f.input :service_tax_applicable , :as => :check_box%>
+    <%= f.input :service_tax_rate %>
+    <%= f.input :service_tax_number %>
+    </div>
+    <div class="col-md-6">
+    <%= f.input :date_of_birth ,as: :date_picker, :label => 'Date Of Birth',
+                  input_html: {data: {date_options: {defaultDate: '01/01/1997'}}}  %>
+    <%= f.label :address %>
+    <%= f.simple_fields_for :address do |ff| %>
+     <%= render 'addresses/address_field', f: ff %>
+    <% end %>
+    <%= f.button :submit %>
+    </div>
+  </div>
+<% end %>

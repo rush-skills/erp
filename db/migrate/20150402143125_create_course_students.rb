@@ -6,7 +6,7 @@ class CreateCourseStudents < ActiveRecord::Migration
       t.references :batch, index: true
       t.integer :discount
       t.integer :total
-
+      t.references :firm, index: true
       t.timestamps
     end
   end

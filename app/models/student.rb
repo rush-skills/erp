@@ -20,9 +20,9 @@ class Student < ActiveRecord::Base
   extend Enumerize
   has_many :additional_fee_payments
   has_many :course_students
-  has_one :address
   validates_presence_of :name, on: :create, message: "can't be blank"
-  accepts_nested_attributes_for :address, reject_if: ->(attributes){ attributes['name'].blank? },allow_destroy: true
-  validates_associated :address, on: :create
+  validates_presence_of :line_1, on: :create, message: "can't be blank"
+  validates_presence_of :city, on: :create, message: "can't be blank"
+  validates_presence_of :country, on: :create, message: "can't be blank"
   enumerize :gender, in: {:male => 1, :female => 2}, default: :male
 end
