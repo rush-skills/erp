@@ -33,6 +33,10 @@ class Admission < ActiveRecord::Base
     field :course
     field :batch
     field :firm
+    list do
+      field :payments
+      field :installments
+    end
   end
 
   def set_firm

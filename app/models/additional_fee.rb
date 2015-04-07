@@ -23,5 +23,7 @@ class AdditionalFee < ActiveRecord::Base
   def to_s
     self.name.to_s + ": " + self.amount.to_s
   end
-
+  def title
+    to_s
+  end
 end

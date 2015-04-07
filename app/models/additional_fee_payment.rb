@@ -20,6 +20,7 @@ class AdditionalFeePayment < ActiveRecord::Base
   validates_presence_of :paid, on: :create, message: "can't be blank"
 
   after_save :set_paid_on
+  after_create :set_paid_on
 
   def set_paid_on
     self.paid_on ||= Time.now
@@ -37,7 +38,11 @@ class AdditionalFeePayment < ActiveRecord::Base
     field :student
     field :additional_fee
     field :paid
-    field :paid_on
+    field :paid_on do
+      default_value do
+        Time.now
+      end
+    end
     list do
       field :name
     end
