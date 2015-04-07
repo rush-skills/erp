@@ -36,9 +36,9 @@ class Ability
       if user.role? :superadmin
         can :manage, :all             # allow superadmins to do anything
       elsif user.role? :admin
-        can :create, [User,Student,Admission,Batch,Payment,Installment,AdditionalFeePayment,Standard,Subject,Class,Fee,FeeHead,Firm,AdditionalFee]
-        can :update, [User,Student,Admission,Batch,Payment,Installment,AdditionalFeePayment,Standard,Subject,Class,Fee,FeeHead,Firm,AdditionalFee]
-        can :read, [User,Student,Admission,Batch,Payment,Installment,AdditionalFeePayment,Standard,Subject,Class,Fee,FeeHead,Firm,AdditionalFee]
+        can :create, [User,Student,Admission,Batch,Payment,Installment,AdditionalFeePayment,Standard,Subject,Firm,AdditionalFee]
+        can :update, [User,Student,Admission,Batch,Payment,Installment,AdditionalFeePayment,Standard,Subject,Firm,AdditionalFee]
+        can :read, [User,Student,Admission,Batch,Payment,Installment,AdditionalFeePayment,Standard,Subject,Course,Firm,AdditionalFee]
         can :show_in_app, Student
         # can :read_reports, :reports
       elsif user.role? :account

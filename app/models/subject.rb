@@ -18,7 +18,7 @@ class Subject < ActiveRecord::Base
   validates_presence_of :standard, on: :create, message: "can't be blank"
 
   rails_admin do
-    visible false
+    field :name
   end
 
   def to_s

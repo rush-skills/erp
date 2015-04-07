@@ -18,11 +18,37 @@ class Fee < ActiveRecord::Base
   validates_presence_of :course, on: :create, message: "can't be blank"
 
   rails_admin do
+    field :fee_heads
+    field :total do
+      def value
+        total = 0
+        bindings[:object].fee_heads.each do |x|
+          total += x.amount
+        end
+        total
+      end
+    end
     visible false
   end
 
   def to_s
     self.course.name + " fees"
+  end
+
+  def value
+    total = 0
+    self.fee_heads.each do |x|
+      total += x.amount
+    end
+    total
+  end
+
+  def apply_discount_total(discount)
+    total = 0
+    self.fee_heads.each do |x|
+      total += (x.amount - (x.amount * discount/100.0))
+    end
+    total
   end
 
 end
