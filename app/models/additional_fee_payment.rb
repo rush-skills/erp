@@ -17,4 +17,8 @@ class AdditionalFeePayment < ActiveRecord::Base
   validates_presence_of :student, on: :create, message: "can't be blank"
   validates_presence_of :additional_fee, on: :create, message: "can't be blank"
   validates_presence_of :paid, on: :create, message: "can't be blank"
+  after_save :set_paid_on
+  def set_paid_on
+    self.paid_on ||= Time.now
+  end
 end
