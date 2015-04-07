@@ -17,9 +17,16 @@ class Admission < ActiveRecord::Base
   belongs_to :course
   belongs_to :student
   belongs_to :batch
+  belongs_to :firm
   has_many :payments
   has_many :installments
   validates_presence_of :course, on: :create, message: "can't be blank"
   validates_presence_of :student, on: :create, message: "can't be blank"
   validates_presence_of :batch, on: :create, message: "can't be blank"
+  rails_admin do
+    field :student
+    field :course
+    field :batch
+    field :firm
+  end
 end

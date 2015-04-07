@@ -14,6 +14,6 @@
 class Payment < ActiveRecord::Base
   belongs_to :admission
   belongs_to :installment
-  validates_presence_of :course_student, on: :create, message: "can't be blank"
+  validates_presence_of :admission, on: :create, message: "can't be blank"
   validates_presence_of :amount, on: :create, message: "can't be blank"
 end

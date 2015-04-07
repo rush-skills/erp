@@ -11,7 +11,14 @@
 
 class Batch < ActiveRecord::Base
   belongs_to :course
-  has_many :students
+  has_many :students, through: :admissions
   has_many :admissions
   validates_presence_of :course, on: :create, message: "can't be blank"
+  rails_admin do
+    field :course
+    field :name
+    list do 
+      field :students
+    end
+  end
 end

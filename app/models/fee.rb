@@ -13,4 +13,7 @@ class Fee < ActiveRecord::Base
   has_many :fee_heads
   accepts_nested_attributes_for :fee_heads, reject_if: ->(attributes){ attributes['name'].blank? }, allow_destroy: true
   validates_presence_of :course, on: :create, message: "can't be blank"
+  rails_admin do
+    visible false
+  end
 end
