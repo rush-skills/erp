@@ -109,7 +109,7 @@ ActiveRecord::Schema.define(version: 20150402152054) do
   end
 
   create_table "installments", force: true do |t|
-    t.integer  "course_student_id"
+    t.integer  "admission_id"
     t.date     "due_on"
     t.integer  "amount"
     t.string   "title"
@@ -117,10 +117,10 @@ ActiveRecord::Schema.define(version: 20150402152054) do
     t.datetime "updated_at"
   end
 
-  add_index "installments", ["course_student_id"], name: "index_installments_on_course_student_id"
+  add_index "installments", ["admission_id"], name: "index_installments_on_admission_id"
 
   create_table "payments", force: true do |t|
-    t.integer  "course_student_id"
+    t.integer  "admission_id"
     t.integer  "installment_id"
     t.date     "paid_on"
     t.integer  "amount"
@@ -128,7 +128,7 @@ ActiveRecord::Schema.define(version: 20150402152054) do
     t.datetime "updated_at"
   end
 
-  add_index "payments", ["course_student_id"], name: "index_payments_on_course_student_id"
+  add_index "payments", ["admission_id"], name: "index_payments_on_admission_id"
   add_index "payments", ["installment_id"], name: "index_payments_on_installment_id"
 
   create_table "standards", force: true do |t|
