@@ -1,6 +1,6 @@
-class CreateCourseStudents < ActiveRecord::Migration
+class CreateAdmissions < ActiveRecord::Migration
   def change
-    create_table :course_students do |t|
+    create_table :admissions do |t|
       t.references :course, index: true
       t.references :student, index: true
       t.references :batch, index: true

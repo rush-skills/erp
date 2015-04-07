@@ -24,4 +24,16 @@ class Firm < ActiveRecord::Base
   validates_presence_of :line_1, on: :create, message: "can't be blank"
   validates_presence_of :city, on: :create, message: "can't be blank"
   validates_presence_of :country, on: :create, message: "can't be blank"
+  rails_admin do
+    field :name
+    field :financial_year
+    field :academic_year
+    field :service_tax_applicable
+    field :service_tax_rate
+    field :service_tax_number
+    field :line_1
+    field :line_2
+    field :city
+    field :country
+  end
 end

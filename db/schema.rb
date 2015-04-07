@@ -32,16 +32,7 @@ ActiveRecord::Schema.define(version: 20150402152054) do
     t.datetime "updated_at"
   end
 
-  create_table "batches", force: true do |t|
-    t.integer  "course_id"
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "batches", ["course_id"], name: "index_batches_on_course_id"
-
-  create_table "course_students", force: true do |t|
+  create_table "admissions", force: true do |t|
     t.integer  "course_id"
     t.integer  "student_id"
     t.integer  "batch_id"
@@ -52,10 +43,19 @@ ActiveRecord::Schema.define(version: 20150402152054) do
     t.datetime "updated_at"
   end
 
-  add_index "course_students", ["batch_id"], name: "index_course_students_on_batch_id"
-  add_index "course_students", ["course_id"], name: "index_course_students_on_course_id"
-  add_index "course_students", ["firm_id"], name: "index_course_students_on_firm_id"
-  add_index "course_students", ["student_id"], name: "index_course_students_on_student_id"
+  add_index "admissions", ["batch_id"], name: "index_admissions_on_batch_id"
+  add_index "admissions", ["course_id"], name: "index_admissions_on_course_id"
+  add_index "admissions", ["firm_id"], name: "index_admissions_on_firm_id"
+  add_index "admissions", ["student_id"], name: "index_admissions_on_student_id"
+
+  create_table "batches", force: true do |t|
+    t.integer  "course_id"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "batches", ["course_id"], name: "index_batches_on_course_id"
 
   create_table "courses", force: true do |t|
     t.string   "name"

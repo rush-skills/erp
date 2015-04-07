@@ -21,10 +21,23 @@
 class Student < ActiveRecord::Base
   extend Enumerize
   has_many :additional_fee_payments
-  has_many :course_students
+  has_many :admissions
   validates_presence_of :name, on: :create, message: "can't be blank"
   validates_presence_of :line_1, on: :create, message: "can't be blank"
   validates_presence_of :city, on: :create, message: "can't be blank"
   validates_presence_of :country, on: :create, message: "can't be blank"
   enumerize :gender, in: {:male => 1, :female => 2}, default: :male
+  rails_admin do
+    field :name
+    field :roll_no
+    field :gender
+    field :school
+    field :phone_1
+    field :phone_2
+    field :date_of_birth
+    field :line_1
+    field :line_2
+    field :city
+    field :country
+  end
 end

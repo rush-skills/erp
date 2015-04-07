@@ -12,7 +12,7 @@
 #
 
 class Installment < ActiveRecord::Base
-  belongs_to :course_student
+  belongs_to :admission
   has_one :payment
   validates_presence_of :course_student, on: :create, message: "can't be blank"
   validates_presence_of :due_on, on: :create, message: "can't be blank"
