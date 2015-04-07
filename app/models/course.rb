@@ -17,4 +17,8 @@ class Course < ActiveRecord::Base
   belongs_to :firm
   accepts_nested_attributes_for :fee, reject_if: ->(attributes){ attributes['name'].blank? },allow_destroy: true
   validates_presence_of :fee, on: :create, message: "can't be blank"
+
+  def to_s
+    self.name.to_s
+  end
 end

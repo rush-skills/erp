@@ -20,11 +20,13 @@
 class Firm < ActiveRecord::Base
   has_many :courses
   has_many :admissions
+
   validates_presence_of :name, on: :create, message: "can't be blank"
   validates_presence_of :service_tax_applicable, on: :create, message: "can't be blank"
   validates_presence_of :line_1, on: :create, message: "can't be blank"
   validates_presence_of :city, on: :create, message: "can't be blank"
   validates_presence_of :country, on: :create, message: "can't be blank"
+
   rails_admin do
     field :name
     field :financial_year
@@ -37,4 +39,9 @@ class Firm < ActiveRecord::Base
     field :city
     field :country
   end
+
+  def to_s
+    self.name.to_s
+  end
+
 end

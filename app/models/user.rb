@@ -28,9 +28,11 @@ class User < ActiveRecord::Base
   extend Enumerize
 
   enumerize :role, in: {:executive => 1, :center_manager => 2, :account => 3, :admin => 4, :super_admin => 5}, default: :executive
+
   def role? role
     self.role == role
   end
+
   rails_admin do
     field :name
     field :role
@@ -38,4 +40,9 @@ class User < ActiveRecord::Base
     field :password
     field :password_confirmation
   end
+
+  def to_s
+    self.name.to_s
+  end
+
 end

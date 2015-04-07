@@ -14,6 +14,12 @@
 class Payment < ActiveRecord::Base
   belongs_to :admission
   belongs_to :installment
+
   validates_presence_of :admission, on: :create, message: "can't be blank"
   validates_presence_of :amount, on: :create, message: "can't be blank"
+
+  def to_s
+    self.admission.to_s + ": " self.amount.to_s + " " + self.paid_on
+  end
+
 end

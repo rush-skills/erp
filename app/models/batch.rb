@@ -11,10 +11,13 @@
 
 class Batch < ActiveRecord::Base
   belongs_to :course
+
   has_many :students, through: :admissions
   has_many :admissions
+
   validates_presence_of :course, on: :create, message: "can't be blank"
   validates_presence_of :name, on: :create, message: "can't be blank"
+
   rails_admin do
     field :course
     field :name
@@ -26,4 +29,5 @@ class Batch < ActiveRecord::Base
   def to_s
     self.course.to_s + " - " + self.name.to_s
   end
+
 end
