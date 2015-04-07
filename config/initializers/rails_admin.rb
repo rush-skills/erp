@@ -1,5 +1,6 @@
 RailsAdmin.config do |config|
 
+  config.main_app_name = ["Sarthak Education", "BackOffice"]
   ### Popular gems integration
 
   # == Devise ==
@@ -25,7 +26,7 @@ RailsAdmin.config do |config|
     show
     edit
     delete
-    # show_in_app
+    show_in_app
 
     ## With an audit adapter, you can add:
     # history_index
