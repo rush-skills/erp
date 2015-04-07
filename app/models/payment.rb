@@ -2,13 +2,13 @@
 #
 # Table name: payments
 #
-#  id                :integer          not null, primary key
-#  course_student_id :integer
-#  installment_id    :integer
-#  paid_on           :date
-#  amount            :integer
-#  created_at        :datetime
-#  updated_at        :datetime
+#  id             :integer          not null, primary key
+#  admission_id   :integer
+#  installment_id :integer
+#  paid_on        :date
+#  amount         :integer
+#  created_at     :datetime
+#  updated_at     :datetime
 #
 
 class Payment < ActiveRecord::Base
@@ -19,7 +19,7 @@ class Payment < ActiveRecord::Base
   validates_presence_of :amount, on: :create, message: "can't be blank"
 
   def to_s
-    self.admission.to_s + ": " self.amount.to_s + " " + self.paid_on
+    self.admission.to_s + ": " + self.amount.to_s + " " + self.paid_on
   end
 
 end

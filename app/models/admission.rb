@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: course_students
+# Table name: admissions
 #
 #  id         :integer          not null, primary key
 #  course_id  :integer
