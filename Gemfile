@@ -62,3 +62,4 @@ gem "cocoon"
 gem 'country_select'
 gem 'enumerize'
 gem 'quiet_assets', group: :development
+gem "cancancan"

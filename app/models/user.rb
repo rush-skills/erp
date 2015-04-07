@@ -24,4 +24,18 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  extend Enumerize
+
+  enumerize :role, in: {:executive => 1, :center_manager => 2, :account => 3, :admin => 4, :super_admin => 5}, default: :executive
+  def role? role
+    self.role == role
+  end
+  rails_admin do
+    field :name
+    field :role
+    field :email
+    field :password
+    field :password_confirmation
+  end
 end
