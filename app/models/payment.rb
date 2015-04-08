@@ -22,4 +22,10 @@ class Payment < ActiveRecord::Base
     self.admission.to_s + ": " + self.amount.to_s + " " + self.paid_on
   end
 
+  rails_admin do
+    field :admission
+    field :installment
+    field :amount
+    field :paid_on
+  end
 end

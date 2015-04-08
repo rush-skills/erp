@@ -54,7 +54,7 @@ class Ability
         can :update, [Student]
       elsif user.role? :executive
         can :create, [Student,Admission]
-        can :read, [Student, Installment]
+        can :read, [Student, Installment,Admission]
         can :show_in_app, Student
       end
     end
